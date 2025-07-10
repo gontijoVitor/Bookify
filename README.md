@@ -1,12 +1,40 @@
-# React + Vite
+# 💈 Sistema de Agendamento
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um sistema web completo para agendamento de serviços, ideal para barbearias, clínicas ou qualquer tipo de atendimento com horário marcado.
 
-Currently, two official plugins are available:
+O projeto é dividido em duas partes:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: Desenvolvido em **React** com **Tailwind CSS** e **Vite**
+- **Backend**: Desenvolvido em **Node.js** com **Express** e banco de dados **MySQL**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Funcionalidades
+
+- Formulário para agendamento com:
+  - Nome, telefone e e-mail
+  - Serviço e profissional
+  - Data, hora e observações
+- Registro dos dados diretamente no banco de dados
+- Arquitetura separada entre frontend e backend
+
+---
+
+## 🧱 Tecnologias utilizadas
+
+### 🔹 Frontend
+- React
+- Tailwind CSS
+- Axios
+- Vite
+
+### 🔹 Backend
+- Node.js
+- Express
+- MySQL2
+- CORS
+
+---
+
+## 📁 Estrutura de diretórios
+
