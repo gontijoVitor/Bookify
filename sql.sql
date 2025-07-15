@@ -1,6 +1,6 @@
-create database agendamento
+create database agendamento;
 
-use agendamento
+use agendamento;
 
 CREATE TABLE usuarios (
   id INT AUTO_INCREMENT PRIMARY KEY,

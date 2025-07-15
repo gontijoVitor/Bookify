@@ -15,14 +15,26 @@ function Agendamento() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
     try {
-      const response = await axios.post('http://localhost:3001/agendar', formData)
+      const payload = {
+        nome: formData.nome,
+        telefone: formData.telefone,
+        servico_id: formData.servico,
+        usuario_id: formData.profissional,
+        data: formData.data,
+        hora: formData.hora,
+        observacoes: formData.observacoes
+      }
+
+      const response = await axios.post('http://localhost:3001/agendar', payload)
       alert(response.data.mensagem)
     } catch (error) {
       console.error(error)
       alert('Erro ao enviar o formulário')
     }
   }
+
 
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
@@ -34,6 +46,8 @@ function Agendamento() {
           <input
             type="text"
             id="nome"
+            value={formData.nome}
+            onChange={handleChange}
             placeholder="Seu nome"
             className="w-full px-3 py-2 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -44,6 +58,8 @@ function Agendamento() {
           <input
             type="text"
             id="telefone"
+            value={formData.telefone}
+            onChange={handleChange}
             placeholder="DDD12345678"
             className="w-full px-3 py-2 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -54,6 +70,8 @@ function Agendamento() {
           <input
             type="email"
             id="email"
+            value={formData.email}
+            onChange={handleChange}
             placeholder="email@gmail.com"
             className="w-full px-3 py-2 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -63,8 +81,11 @@ function Agendamento() {
           <label htmlFor="servico" className="block mb-1">Selecione o serviço</label>
           <select
             id="servico"
+            value={formData.servico}
+            onChange={handleChange}
             className="w-full px-3 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
+            <option value="">-- Escolha um serviço --</option>
             <option>Corte tradicional (30 min)</option>
             <option>Corte degradê (40 min)</option>
             <option>Barba completa (30 min)</option>
@@ -80,8 +101,11 @@ function Agendamento() {
           <label htmlFor="profissional" className="block mb-1">Escolha o profissional</label>
           <select
             id="profissional"
+            value={formData.profissional}
+            onChange={handleChange}
             className="w-full px-3 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
+            <option value="">-- Escolha um profissional --</option>
             <option>Profissional 1</option>
             <option>Profissional 2</option>
           </select>
@@ -92,6 +116,8 @@ function Agendamento() {
           <input
             type="date"
             id="data"
+            value={formData.data}
+            onChange={handleChange}
             className="w-full px-3 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
@@ -101,14 +127,18 @@ function Agendamento() {
           <input
             type="time"
             id="hora"
+            value={formData.hora}
+            onChange={handleChange}
             className="w-full px-3 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div>
-          <label htmlFor="obs" className="block mb-1">Observações</label>
+          <label htmlFor="observacoes" className="block mb-1">Observações</label>
           <textarea
-            id="obs"
+            id="observacoes"
+            value={formData.observacoes}
+            onChange={handleChange}
             rows="3"
             className="w-full px-3 py-2 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Digite algo relevante..."
