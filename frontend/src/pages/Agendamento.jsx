@@ -86,14 +86,14 @@ function Agendamento() {
             className="w-full px-3 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="">-- Escolha um serviço --</option>
-            <option>Corte tradicional (30 min)</option>
-            <option>Corte degradê (40 min)</option>
-            <option>Barba completa (30 min)</option>
-            <option>Sobrancelha (10 min)</option>
-            <option>Lavagem com massagem (15 min)</option>
-            <option>Camuflagem de fios (45 min)</option>
-            <option>Progressiva (90 min)</option>
-            <option>Corte + Barba (60 min)</option>
+            <option value="1">Corte tradicional (30 min)</option>
+            <option value="2">Corte degradê (40 min)</option>
+            <option value="3">Barba completa (30 min)</option>
+            <option value="4">Sobrancelha (10 min)</option>
+            <option value="5">Lavagem com massagem (15 min)</option>
+            <option value="6">Camuflagem de fios (45 min)</option>
+            <option value="7">Progressiva (90 min)</option>
+            <option value="8">Corte + Barba (60 min)</option>
           </select>
         </div>
 
@@ -106,8 +106,8 @@ function Agendamento() {
             className="w-full px-3 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="">-- Escolha um profissional --</option>
-            <option>Profissional 1</option>
-            <option>Profissional 2</option>
+            <option value="1">Profissional 1</option>
+            <option value="2">Profissional 2</option>
           </select>
         </div>
 
