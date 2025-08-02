@@ -1,3 +1,5 @@
+//Formulário para criar um novo agendamento. Faz POST /api/agendamentos. Requer busca dinâmica de serviços, horários disponíveis, etc.
+
 import { useState } from 'react'
 import axios from 'axios'
 

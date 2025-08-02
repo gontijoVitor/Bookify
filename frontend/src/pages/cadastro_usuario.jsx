@@ -1,0 +1,1 @@
+//Criação de novo usuário. Envia nome, email, senha via POST /api/usuarios. Pode incluir validação de email/duplicidade.

@@ -1,0 +1,1 @@
+//Visão geral do usuário logado. Pode exibir resumo dos agendamentos (próximos, passados, etc).

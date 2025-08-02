@@ -1,0 +1,1 @@
+//Formulário de autenticação. Envia email e senha para o backend via POST /api/login, recebe token (ou sessão) e redireciona.
