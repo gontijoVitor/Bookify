@@ -10,7 +10,7 @@ function Horarios() {
             <Horario/>
             <Horario/>
         </div>
-)
+    )
 }
 
 export default Horarios;
