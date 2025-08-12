@@ -1,22 +1,20 @@
-//Formulário para criar um novo agendamento. Faz POST /api/agendamentos. Requer busca dinâmica de serviços, horários disponíveis, etc.
-
-import { useState } from 'react'
-import axios from 'axios'
+import { useState } from 'react';
+import axios from 'axios';
 
 function Agendamento() {
   const [formData, setFormData] = useState({
     nome: '', telefone: '', email: '',
     servico: '', profissional: '',
     data: '', hora: '', observacoes: ''
-  })
+  });
 
   const handleChange = (e) => {
-    const { id, value } = e.target
-    setFormData(prev => ({ ...prev, [id]: value }))
-  }
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     try {
       const payload = {
@@ -27,135 +25,127 @@ function Agendamento() {
         data: formData.data,
         hora: formData.hora,
         observacoes: formData.observacoes
-      }
+      };
 
-      const response = await axios.post('http://localhost:3001/agendar', payload)
-      alert(response.data.mensagem)
+      const response = await axios.post('http://localhost:3001/agendar', payload);
+      alert(response.data.mensagem);
     } catch (error) {
-      console.error(error)
-      alert('Erro ao enviar o formulário')
+      console.error(error);
+      alert('Erro ao enviar o formulário');
     }
-  }
-
+  };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
-      <form className="w-full max-w-md bg-gray-800 text-white rounded-lg shadow-lg p-8 space-y-5" onSubmit={handleSubmit}>
-        <h1 className="text-2xl font-bold text-center text-white">Agende seu horário</h1>
+    <div className="shadow-xl p-5 rounded-lg">
+      <h1 className="text-center text-xl font-bold">Agende seu horário</h1>
 
-        <div>
-          <label htmlFor="nome" className="block mb-1">Digite seu nome completo</label>
+      <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+        
+        <div className="flex flex-col">
+          <label htmlFor="nome">Digite seu nome completo</label>
           <input
             type="text"
             id="nome"
             value={formData.nome}
             onChange={handleChange}
             placeholder="Seu nome"
-            className="w-full px-3 py-2 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border rounded-lg px-3 py-1"
           />
         </div>
 
-        <div>
-          <label htmlFor="telefone" className="block mb-1">Digite seu telefone</label>
+        <div className="flex flex-col">
+          <label htmlFor="telefone">Digite seu telefone</label>
           <input
             type="text"
             id="telefone"
             value={formData.telefone}
             onChange={handleChange}
             placeholder="DDD12345678"
-            className="w-full px-3 py-2 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border rounded-lg px-3 py-1"
           />
         </div>
+        
+        <div className="flex flex-row gap-4 w-full">
+          <div className="flex flex-col flex-1">
+            <label htmlFor="servico">Selecione o serviço</label>
+            <select
+              id="servico"
+              value={formData.servico}
+              onChange={handleChange}
+              className="border rounded-lg px-3 py-1"
+            >
+              <option value="">-- Escolha um serviço --</option>
+              <option value="1">Corte tradicional (30 min)</option>
+              <option value="2">Corte degradê (40 min)</option>
+              <option value="3">Barba completa (30 min)</option>
+              <option value="4">Sobrancelha (10 min)</option>
+              <option value="5">Lavagem com massagem (15 min)</option>
+              <option value="6">Camuflagem de fios (45 min)</option>
+              <option value="7">Progressiva (90 min)</option>
+              <option value="8">Corte + Barba (60 min)</option>
+            </select>
+          </div>
 
-        <div>
-          <label htmlFor="email" className="block mb-1">Digite seu email</label>
-          <input
-            type="email"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="email@gmail.com"
-            className="w-full px-3 py-2 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="flex flex-col flex-1">
+            <label htmlFor="profissional">Escolha o profissional</label>
+            <select
+              id="profissional"
+              value={formData.profissional}
+              onChange={handleChange}
+              className="border rounded-lg px-3 py-1"
+            >
+              <option value="">-- Escolha um profissional --</option>
+              <option value="1">Profissional 1</option>
+              <option value="2">Profissional 2</option>
+            </select>
+          </div>
         </div>
 
-        <div>
-          <label htmlFor="servico" className="block mb-1">Selecione o serviço</label>
-          <select
-            id="servico"
-            value={formData.servico}
-            onChange={handleChange}
-            className="w-full px-3 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">-- Escolha um serviço --</option>
-            <option value="1">Corte tradicional (30 min)</option>
-            <option value="2">Corte degradê (40 min)</option>
-            <option value="3">Barba completa (30 min)</option>
-            <option value="4">Sobrancelha (10 min)</option>
-            <option value="5">Lavagem com massagem (15 min)</option>
-            <option value="6">Camuflagem de fios (45 min)</option>
-            <option value="7">Progressiva (90 min)</option>
-            <option value="8">Corte + Barba (60 min)</option>
-          </select>
+        <div className="flex flex-row gap-4 w-full">
+          <div className="flex flex-col flex-1">
+            <label htmlFor="data">Escolha uma data</label>
+            <input
+              type="date"
+              id="data"
+              value={formData.data}
+              onChange={handleChange}
+              className="border rounded-lg px-3 py-1 w-full"
+            />
+          </div>
+
+          <div className="flex flex-col flex-1">
+            <label htmlFor="hora">Escolha um horário</label>
+            <input
+              type="time"
+              id="hora"
+              value={formData.hora}
+              onChange={handleChange}
+              className="border rounded-lg px-3 py-1 w-full"
+            />
+          </div>
         </div>
 
-        <div>
-          <label htmlFor="profissional" className="block mb-1">Escolha o profissional</label>
-          <select
-            id="profissional"
-            value={formData.profissional}
-            onChange={handleChange}
-            className="w-full px-3 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">-- Escolha um profissional --</option>
-            <option value="1">Profissional 1</option>
-            <option value="2">Profissional 2</option>
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="data" className="block mb-1">Escolha uma data</label>
-          <input
-            type="date"
-            id="data"
-            value={formData.data}
-            onChange={handleChange}
-            className="w-full px-3 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="hora" className="block mb-1">Escolha um horário</label>
-          <input
-            type="time"
-            id="hora"
-            value={formData.hora}
-            onChange={handleChange}
-            className="w-full px-3 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="observacoes" className="block mb-1">Observações</label>
+        <div className="flex flex-col">
+          <label htmlFor="observacoes">Observações</label>
           <textarea
             id="observacoes"
             value={formData.observacoes}
             onChange={handleChange}
             rows="3"
-            className="w-full px-3 py-2 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Digite algo relevante..."
+            className="border rounded-lg px-3 py-1"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded transition duration-200"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition duration-200"
         >
           Marcar horário
         </button>
       </form>
     </div>
-  )
+  );
 }
 
-export default Agendamento
+export default Agendamento;
