@@ -3,7 +3,7 @@
 function User_register() {
     return(
         <div className="shadow-xl p-5 rounded-lg">
-            <h1 className="text-center">Cadastro</h1>
+            <h1 className="text-center font-bold">Cadastro</h1>
             <div className="space-y-4">
                 <div className="flex flex-col">
                     <label for="name">Nome: </label>

@@ -6,7 +6,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 function User_login() {
     return(
         <div className="shadow-xl p-5 rounded-lg">
-            <h1 className="text-center">Login</h1>
+            <h1 className="text-center font-bold">Login</h1>
             <div className="space-y-4">
                 <div className="flex flex-col">
                     <label for="email">Email: </label>
