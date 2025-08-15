@@ -10,6 +10,8 @@ import User_register from './pages/user_signin.jsx';
 import Config from './pages/configuracoes.jsx';
 import Dashboard from './pages/dashboard.jsx';
 import Horarios from './pages/lista_agendamentos.jsx';
+import User_recovery from './pages/user_recovery.jsx';
+import Nova_senha from './pages/nova_senha.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

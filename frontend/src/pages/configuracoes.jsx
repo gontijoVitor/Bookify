@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 function Config() {
-    var tipoUser = "cliente";
+    var tipoUser = "prestador";
     if(tipoUser == "prestador"){
         return(
             <div className="shadow-xl p-5 rounded-lg">
@@ -82,6 +82,16 @@ function Config() {
 
                     <button className="mx-auto">Salvar alterações</button>
                 </div>
+            </div>
+        )
+    }
+    else{
+        return(
+            <div className="shadow-xl p-5 rounded-lg">
+                <h1 className="text-center">Configurações</h1>
+                <p>
+                    Um erro EXTREMAMENTE inexperado ocorreu
+                </p>
             </div>
         )
     }
