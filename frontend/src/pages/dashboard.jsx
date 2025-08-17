@@ -2,9 +2,10 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faCalendarAlt, faUser, faClock, faList } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function Dashboard() {
-    var tipoUser = "cliente"
+    var tipoUser = "prestador"
     if(tipoUser == "prestador"){
         return(
             <div className="shadow-xl p-5 rounded-lg">
@@ -63,14 +64,18 @@ function Dashboard() {
 
                 {/* Botão Novo Agendamento */}
                 <div className="mt-6 text-center ">
-                    <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
-                        <FontAwesomeIcon icon={faList} />
-                        Todos os agendamentos
-                    </button>
-                    <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
-                        <FontAwesomeIcon icon={faPlus} />
-                        Novo Agendamento
-                    </button>
+                    <Link to="/horarios">
+                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                            <FontAwesomeIcon icon={faList} />
+                            Todos os agendamentos
+                        </button>
+                    </Link>
+                    <Link to="/agendamento">
+                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                            <FontAwesomeIcon icon={faPlus} />
+                            Novo Agendamento
+                        </button>
+                    </Link>
                 </div>
             </div>
         )

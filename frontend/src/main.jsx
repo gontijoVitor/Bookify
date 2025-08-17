@@ -1,22 +1,14 @@
 import './index.css';
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom';
 
 import App from './app.jsx';
 
-import Agendamento from './pages/cria_agendamento.jsx'
-import User_login from './pages/user_login.jsx';
-import User_register from './pages/user_signin.jsx';
-import Config from './pages/configuracoes.jsx';
-import Dashboard from './pages/dashboard.jsx';
-import Horarios from './pages/lista_agendamentos.jsx';
-import User_recovery from './pages/user_recovery.jsx';
-import Nova_senha from './pages/nova_senha.jsx';
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App>
-      <Dashboard />
-    </App>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
   </StrictMode>,
 )

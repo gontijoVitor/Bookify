@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function Agendamento() {
   const [formData, setFormData] = useState({
@@ -137,12 +140,21 @@ function Agendamento() {
           />
         </div>
 
-        <button
-          type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition duration-200"
-        >
-          Marcar horário
-        </button>
+          {/* Botão Novo Agendamento */}
+          <div className="mt-6 text-center ">
+              <Link to="/">
+                  <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                      <FontAwesomeIcon icon={faChevronLeft} />
+                      Voltar
+                  </button>
+              </Link>
+              <Link to="/agendamento">
+                  <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                      <FontAwesomeIcon icon={faPlus} />
+                      Realizar agendamento
+                  </button>
+              </Link>
+          </div>
       </form>
     </div>
   );
