@@ -1,4 +1,7 @@
 //página responsável por listar horarios do prestador de serviço
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faUser } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function User_register() {
     return(
@@ -30,9 +33,20 @@ function User_register() {
                     <input type="radio" id="prestador" name="user_type" className="mx-2" value="prestador" />
                     <label htmlFor="prestador">Prestador</label>
                 </div>
-                <div className="mx-auto">
-                    <a><button className="mx-2">Já tenho conta</button></a>
-                    <button className="mx-2">Criar conta</button>
+                {/* Botão Novo Agendamento */}
+                <div className="mt-6 text-center ">
+                    <Link to="/login">
+                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                            <FontAwesomeIcon icon={faUser} />
+                            Já tenho conta
+                        </button>
+                    </Link>
+                    <Link to="">
+                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                            <FontAwesomeIcon icon={faPlus} />
+                            Criar conta
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

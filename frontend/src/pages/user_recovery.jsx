@@ -1,7 +1,8 @@
 //página de recuperação de senha
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function User_recovery (){
     return(
@@ -12,9 +13,19 @@ function User_recovery (){
                     <label for="email">Digite o email que deseja recuperar: </label>
                     <input type="email" className="border rounded-lg px-3 py-1" />
                 </div>
-                <div className="mx-auto">
-                    <a><button className="mx-2">Retornar</button></a>
-                    <button className="mx-2">Enviar email</button>
+                <div className="mt-6 text-center ">
+                    <Link to="/login">
+                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                            Voltar
+                        </button>
+                    </Link>
+                    <Link to="">
+                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                            <FontAwesomeIcon icon={faEnvelope} />
+                            Enviar email de recuperação
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

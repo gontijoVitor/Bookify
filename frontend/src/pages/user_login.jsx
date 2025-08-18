@@ -1,7 +1,8 @@
 //página de login de usuario
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faArrowRightToBracket, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function User_login() {
     return(
@@ -18,11 +19,21 @@ function User_login() {
                         <input type="password" className="border rounded-lg px-3 py-1" />
                         <FontAwesomeIcon className="mx-auto my-auto" icon={faEye} />
                     </div>
-                    <a><p className="text-center">Esqueci minha senha</p></a>
+                    <Link to="/recuperar"><p className="text-center">Esqueci minha senha</p></Link>
                 </div>
-                <div className="mx-auto">
-                    <a><button className="mx-2">Não tenho conta</button></a>
-                    <button className="mx-2">Entrar</button>
+                <div className="mt-6 text-center ">
+                    <Link to="/registrar">
+                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                            <FontAwesomeIcon icon={faPlus} />
+                            Não tenho conta
+                        </button>
+                    </Link>
+                    <Link to="">
+                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                            <FontAwesomeIcon icon={faArrowRightToBracket} />
+                            Acessar
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
