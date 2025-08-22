@@ -1,0 +1,69 @@
+| Uso                                           | Cor                 | Hex       | Tailwind (aprox)               |
+| --------------------------------------------- | ------------------- | --------- | ------------------------------ |
+| **Fundo principal** (body, navbar, dashboard) | Azul quase preto    | `#0A192F` | `bg-[#0A192F]`                 |
+| **Fundo secundário** (cards, caixas)          | Azul escuro         | `#112240` | `bg-[#112240]`                 |
+| **Destaques** (botões, links ativos)          | Azul médio          | `#1E40AF` | `bg-blue-800`                  |
+| **Hover / foco** (botões, links)              | Azul vibrante       | `#2563EB` | `bg-blue-600`                  |
+| **Texto primário**                            | Branco puro         | `#F8FAFC` | `text-slate-50`                |
+| **Texto secundário** (descrições, labels)     | Cinza-azulado claro | `#94A3B8` | `text-slate-400`               |
+| **Bordas / separadores**                      | Azul acinzentado    | `#334155` | `border-slate-700`             |
+| **Ações de erro/alerta**                      | Vermelho suave      | `#DC2626` | `red-600` (apenas se precisar) |
+
+<div class="min-h-screen bg-[#0A192F] text-slate-50">
+  <nav class="bg-[#112240] shadow-md px-6 py-4 flex justify-between">
+    <span class="text-xl font-bold text-slate-50">BarberPro</span>
+    <div class="space-x-6 hidden md:flex">
+      <a class="hover:text-[#2563EB]" href="#">Dashboard</a>
+      <a class="hover:text-[#2563EB]" href="#">Agendamentos</a>
+      <a class="hover:text-[#2563EB]" href="#">Clientes</a>
+    </div>
+    <button class="bg-[#1E40AF] px-4 py-2 rounded-lg hover:bg-[#2563EB]">
+      Entrar
+    </button>
+  </nav>
+
+  <main class="p-6">
+    <div class="bg-[#112240] border border-slate-700 rounded-lg p-6">
+      <h2 class="text-lg font-semibold">Exemplo de Card</h2>
+      <p class="text-slate-400">Aqui vai o conteúdo dentro do novo padrão azul.</p>
+    </div>
+  </main>
+</div>
+
+
+Perfeito, Vítor. O fundo cinza que você está usando (provavelmente algo como `#2f2f2f` ou próximo disso) realmente não conversa muito bem com o restante da paleta que você definiu (que é bem mais focada em azuis).
+
+👉 Aqui vai a lógica que você pode aplicar para o **fundo principal (background)** dependendo do tema:
+
+---
+
+### 1. **Tema Escuro (Dark Theme)**
+
+* Use um **azul quase preto** como base:
+
+  * `#0A0E17` (bem profundo, com leve tom azulado)
+  * `#0D1117` (um clássico usado no GitHub Dark Mode)
+
+Isso cria contraste limpo com os blocos azul-escuros (`#0D1B2A` / `#1B263B`) que você já está usando.
+
+---
+
+### 2. **Tema Claro (Light Theme)**
+
+* Use algo próximo de **cinza-azulado bem suave**, para manter a coerência com os azuis:
+
+  * `#F5F8FA` (cinza quase branco com fundo frio)
+  * `#EAF0F6` (um tom mais azulado e menos "quente" que o cinza puro)
+
+Assim, não fica aquele branco estourado e mantém a identidade azulada.
+
+---
+
+📌 Resumindo:
+
+* **Dark theme** → `#0A0E17` ou `#0D1117`
+* **Light theme** → `#F5F8FA` ou `#EAF0F6`
+
+---
+
+Quer que eu te monte um **preview de como ficaria o dashboard com esses fundos** (colocando as cores de fundo direto no print que você me mandou), ou prefere só os códigos hex?

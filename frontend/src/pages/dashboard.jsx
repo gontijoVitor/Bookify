@@ -9,7 +9,7 @@ function Dashboard() {
     //otimizar para que apenas o conteúdo seja alterado, e não toda a página, assim economizando processamento e código
     if(tipoUser == "prestador"){
         return(
-            <div className="bg-gray-900 shadow-xl p-5 rounded-lg">
+            <div className="bg-gray-900 shadow-xl rounded-lg" style={{padding: "40px"}}>
                 {/* Cabeçalho */}
                 <div className="mb-6">
                     <h1 className="text-center font-bold">Dashboard do Profissional</h1>
