@@ -6,9 +6,10 @@ import { Link } from "react-router-dom";
 
 function Dashboard() {
     var tipoUser = "prestador"
+    //otimizar para que apenas o conteúdo seja alterado, e não toda a página, assim economizando processamento e código
     if(tipoUser == "prestador"){
         return(
-            <div className="shadow-xl p-5 rounded-lg">
+            <div className="bg-gray-900 shadow-xl p-5 rounded-lg">
                 {/* Cabeçalho */}
                 <div className="mb-6">
                     <h1 className="text-center font-bold">Dashboard do Profissional</h1>
