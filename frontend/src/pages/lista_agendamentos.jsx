@@ -13,7 +13,7 @@ function Horarios() {
             <Horario/>
             <div className="mt-6 text-center ">
                 <Link to="/">
-                    <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                    <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline destaques-color">
                         <FontAwesomeIcon icon={faChevronLeft} />
                         Voltar
                     </button>

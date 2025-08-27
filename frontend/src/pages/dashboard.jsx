@@ -9,7 +9,7 @@ function Dashboard() {
     //otimizar para que apenas o conteúdo seja alterado, e não toda a página, assim economizando processamento e código
     if(tipoUser == "prestador"){
         return(
-            <div className="bg-gray-900 shadow-xl rounded-lg" style={{padding: "40px"}}>
+            <div className="bg-[#112240] shadow-xl rounded-lg" style={{padding: "40px"}}>
                 {/* Cabeçalho */}
                 <div className="mb-6">
                     <h1 className="text-center font-bold">Dashboard do Profissional</h1>
@@ -56,7 +56,7 @@ function Dashboard() {
                                 <p className="font-bold">Deftonerson Scrobblers - Corte simples</p>
                                 <p className="text-gray-400 text-sm">15:00 - 15:45</p>
                             </div>
-                            <button className="mt-2 sm:mt-0 px-3 py-1 rounded-lg text-sm">
+                            <button className="mt-2 sm:mt-0 px-3 py-1 rounded-lg text-sm destaques-color">
                                 Ver Detalhes
                             </button>
                         </div>
@@ -64,15 +64,15 @@ function Dashboard() {
                 </div>
 
                 {/* Botão Novo Agendamento */}
-                <div className="mt-6 text-center ">
+                <div className="mt-6 text-center">
                     <Link to="/horarios">
-                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                        <button className="px-4 py-2 rounded-lg bg-blue-800 text-white inline-flex items-center gap-2 mx-2 destaques-color">
                             <FontAwesomeIcon icon={faList} />
                             Todos os agendamentos
                         </button>
                     </Link>
                     <Link to="/agendamento">
-                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                        <button className="px-4 py-2 rounded-lg bg-blue-800 text-white inline-flex items-center gap-2 mx-2 destaques-color">
                             <FontAwesomeIcon icon={faPlus} />
                             Novo Agendamento
                         </button>
