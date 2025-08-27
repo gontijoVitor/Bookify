@@ -1,14 +1,13 @@
 // App.jsx
 import { Routes, Route } from "react-router-dom";
 
-import Agendamento from './pages/cria_agendamento.jsx'
-import User_login from './pages/user_login.jsx';
-import User_register from './pages/user_signin.jsx';
-import Config from './pages/configuracoes.jsx';
 import Dashboard from './pages/dashboard.jsx';
-import Horarios from './pages/lista_agendamentos.jsx';
-import User_recovery from './pages/user_recovery.jsx';
-import Nova_senha from './pages/nova_senha.jsx';
+import Schedule from './pages/schedule.jsx';
+import UserLogin from './pages/user_login.jsx';
+import UserSignin from './pages/user_signin.jsx';
+import Settings from './pages/settings.jsx'
+import UserRecovery from "./pages/user_recovery.jsx";
+import ResetPassword from "./pages/reset_password.jsx";
 
 export default function App({ children }) {
   const layoutStyle = {
@@ -26,13 +25,12 @@ export default function App({ children }) {
     <div style={layoutStyle}>
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/agendamento" element={<Agendamento />} />
-        <Route path="/login" element={<User_login />} />
-        <Route path="/registrar" element={<User_register />} />
-        <Route path="/config" element={<Config />} />
-        <Route path="/horarios" element={<Horarios />} />
-        <Route path="/recuperar" element={<User_recovery />} />
-        <Route path="/nova-senha" element={<Nova_senha />} />
+        <Route path="/schedule" element={<Schedule />} />
+        <Route path="/login" element={<UserLogin />} />
+        <Route path="/signin" element={<UserSignin />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/user_recovery" element={<UserRecovery />} />
+        <Route path="/reset_password" element={<ResetPassword />} />
       </Routes>
     </div>
   );

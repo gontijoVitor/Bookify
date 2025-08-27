@@ -4,26 +4,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-function User_recovery (){
+function UserRecovery (){
     return(
-        <div className="shadow-xl p-5 rounded-lg">
-            <h1 className="text-center font-bold">Recuperar senha</h1>
+        <div className="sec-bg-color shadow-xl rounded-lg" style={{padding: "40px"}}>
+            <h1 className="text-center font-bold">Password recovery</h1>
             <div className="space-y-4">
                 <div className="flex flex-col">
-                    <label for="email">Digite o email que deseja recuperar: </label>
+                    <label for="email">Type the email address you'd like to recover the password: </label>
                     <input type="email" className="border rounded-lg px-3 py-1" />
                 </div>
                 <div className="mt-6 text-center ">
                     <Link to="/login">
-                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline highlights-color">
                             <FontAwesomeIcon icon={faChevronLeft} />
-                            Voltar
+                            Go back
                         </button>
                     </Link>
                     <Link to="">
-                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline">
+                        <button className="px-4 py-2 rounded-lg items-center gap-2 mx-2 inline highlights-color">
                             <FontAwesomeIcon icon={faEnvelope} />
-                            Enviar email de recuperação
+                            Send recovery email
                         </button>
                     </Link>
                 </div>
@@ -32,4 +32,4 @@ function User_recovery (){
     )
 }
 
-export default User_recovery;
+export default UserRecovery;

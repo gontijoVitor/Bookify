@@ -69,9 +69,21 @@ button:focus-visible {
   }
 }
 
-.destaques-color{
+
+
+
+/* custom colors */
+.main-bg-color{
+  background-color: #0A192F;
+}
+
+.sec-bg-color{
+    background-color: #112240;
+}
+
+.highlights-color{
   background-color: #1E40AF;
 }
-.destaques-color:hover{
+.highlights-color:hover{
   background-color: #2563EB;
 }

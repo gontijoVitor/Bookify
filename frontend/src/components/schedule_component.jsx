@@ -1,16 +1,16 @@
 import { useState } from "react";
 import ReactModal from "react-modal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faNoteSticky, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+import { faNoteSticky, faEllipsisVertical, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 // Configura o elemento principal da aplicação
 ReactModal.setAppElement('#root'); // ou o id do seu elemento principal
 
-function Horario() {
+function ScheduleComponent() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="shadow-xl rounded-lg py-3 px-4 my-4 bg-[#112240]">
+    <div className="shadow-xl rounded-lg py-3 px-4 my-4 sec-bg-color">
       <div className="flex justify-between items-start">
         <div>
           <div className="flex items-center gap-2">
@@ -26,8 +26,8 @@ function Horario() {
         </div>
 
         {/* Botão que abre o modal */}
-        <button className="destaques-color" onClick={() => setIsOpen(true)}>
-          <FontAwesomeIcon icon={faEllipsisVertical} size="xl" className="text-gray-400 cursor-pointer my-auto ml-5" />
+        <button className="ml-5 px-3 rounded-lg highlights-color" onClick={() => setIsOpen(true)}>
+          <FontAwesomeIcon icon={faPenToSquare}/>
         </button>
 
         {/* Modal */}
@@ -42,7 +42,7 @@ function Horario() {
               bottom: "auto",
               transform: "translate(-50%, -50%)",
               background: "#112240",
-              padding: "20px",
+              padding: "40px",
               borderRadius: "8px"
             },
             overlay: {
@@ -116,15 +116,15 @@ function Horario() {
             </div>
           </form>
           <div className="my-4 flex justify-center">
-            <button className="destaques-color">Editar</button>
-            <button className="destaques-color">Marcar como concluido</button>
-            <button className="destaques-color">Remover horário</button>
+            <button className="highlights-color mx-1">Edit</button>
+            <button className="highlights-color mx-1">Mark as done</button>
+            <button className="highlights-color mx-1">Remove schedule</button>
+            <button className="highlights-color mx-1" onClick={() => setIsOpen(false)}>Close</button>
           </div>
-            <button className="destaques-color" onClick={() => setIsOpen(false)}>Fechar</button>
         </ReactModal>
       </div>
     </div>
   );
 }
 
-export default Horario;
+export default ScheduleComponent;

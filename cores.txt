@@ -1,69 +1,64 @@
-| Uso                                           | Cor                 | Hex       | Tailwind (aprox)               |
-| --------------------------------------------- | ------------------- | --------- | ------------------------------ |
-| **Fundo principal** (body, navbar, dashboard) | Azul quase preto    | `#0A192F` | `bg-[#0A192F]`                 |
-| **Fundo secundário** (cards, caixas)          | Azul escuro         | `#112240` | `bg-[#112240]`                 |
-| **Destaques** (botões, links ativos)          | Azul médio          | `#1E40AF` | `bg-blue-800`                  |
-| **Hover / foco** (botões, links)              | Azul vibrante       | `#2563EB` | `bg-blue-600`                  |
-| **Texto primário**                            | Branco puro         | `#F8FAFC` | `text-slate-50`                |
-| **Texto secundário** (descrições, labels)     | Cinza-azulado claro | `#94A3B8` | `text-slate-400`               |
-| **Bordas / separadores**                      | Azul acinzentado    | `#334155` | `border-slate-700`             |
-| **Ações de erro/alerta**                      | Vermelho suave      | `#DC2626` | `red-600` (apenas se precisar) |
+| Usage                                         | Color             | Hex       | Tailwind (approx)          |
+| --------------------------------------------- | ----------------- | --------- | -------------------------- |
+| **Main background** (body, navbar, dashboard) | Almost black blue | `#0A192F` | `bg-[#0A192F]`             |
+| **Secondary background** (cards, boxes)       | Dark blue         | `#112240` | `bg-[#112240]`             |
+| **Highlights** (buttons, active links)        | Medium blue       | `#1E40AF` | `bg-blue-800`              |
+| **Hover / focus** (buttons, links)            | Vibrant blue      | `#2563EB` | `bg-blue-600`              |
+| **Primary text**                              | Pure white        | `#F8FAFC` | `text-slate-50`            |
+| **Secondary text** (descriptions, labels)     | Light blue-gray   | `#94A3B8` | `text-slate-400`           |
+| **Borders / dividers**                        | Grayish blue      | `#334155` | `border-slate-700`         |
+| **Error / alert actions**                     | Soft red          | `#DC2626` | `red-600` (only if needed) |
 
+```html
 <div class="min-h-screen bg-[#0A192F] text-slate-50">
   <nav class="bg-[#112240] shadow-md px-6 py-4 flex justify-between">
     <span class="text-xl font-bold text-slate-50">BarberPro</span>
     <div class="space-x-6 hidden md:flex">
       <a class="hover:text-[#2563EB]" href="#">Dashboard</a>
-      <a class="hover:text-[#2563EB]" href="#">Agendamentos</a>
-      <a class="hover:text-[#2563EB]" href="#">Clientes</a>
+      <a class="hover:text-[#2563EB]" href="#">Appointments</a>
+      <a class="hover:text-[#2563EB]" href="#">Clients</a>
     </div>
     <button class="bg-[#1E40AF] px-4 py-2 rounded-lg hover:bg-[#2563EB]">
-      Entrar
+      Sign In
     </button>
   </nav>
 
   <main class="p-6">
     <div class="bg-[#112240] border border-slate-700 rounded-lg p-6">
-      <h2 class="text-lg font-semibold">Exemplo de Card</h2>
-      <p class="text-slate-400">Aqui vai o conteúdo dentro do novo padrão azul.</p>
+      <h2 class="text-lg font-semibold">Card Example</h2>
+      <p class="text-slate-400">This is the content inside the new blue pattern.</p>
     </div>
   </main>
 </div>
-
-
-Perfeito, Vítor. O fundo cinza que você está usando (provavelmente algo como `#2f2f2f` ou próximo disso) realmente não conversa muito bem com o restante da paleta que você definiu (que é bem mais focada em azuis).
-
-👉 Aqui vai a lógica que você pode aplicar para o **fundo principal (background)** dependendo do tema:
+```
 
 ---
 
-### 1. **Tema Escuro (Dark Theme)**
+✅ The gray background you are currently using (probably something like `#2f2f2f` or close to that) does not blend very well with the rest of the palette you defined (which is much more focused on blues).
 
-* Use um **azul quase preto** como base:
-
-  * `#0A0E17` (bem profundo, com leve tom azulado)
-  * `#0D1117` (um clássico usado no GitHub Dark Mode)
-
-Isso cria contraste limpo com os blocos azul-escuros (`#0D1B2A` / `#1B263B`) que você já está usando.
+Here’s the logic you can apply for the **main background** depending on the theme:
 
 ---
 
-### 2. **Tema Claro (Light Theme)**
+### 1. **Dark Theme**
 
-* Use algo próximo de **cinza-azulado bem suave**, para manter a coerência com os azuis:
+Use an **almost black blue** as the base:
 
-  * `#F5F8FA` (cinza quase branco com fundo frio)
-  * `#EAF0F6` (um tom mais azulado e menos "quente" que o cinza puro)
+* `#0A0E17` (very deep, with a slight bluish tone)
+* `#0D1117` (a classic used in GitHub Dark Mode)
 
-Assim, não fica aquele branco estourado e mantém a identidade azulada.
-
----
-
-📌 Resumindo:
-
-* **Dark theme** → `#0A0E17` ou `#0D1117`
-* **Light theme** → `#F5F8FA` ou `#EAF0F6`
+This creates clean contrast with the dark blue blocks (`#0D1B2A` / `#1B263B`) you are already using.
 
 ---
 
-Quer que eu te monte um **preview de como ficaria o dashboard com esses fundos** (colocando as cores de fundo direto no print que você me mandou), ou prefere só os códigos hex?
+### 2. **Light Theme**
+
+Use something close to a **very soft blue-gray**, to keep coherence with the blues:
+
+* `#F5F8FA` (almost white gray with a cool undertone)
+* `#EAF0F6` (a more bluish shade, less “warm” than pure gray)
+
+---
+
+**Recommendation:** Keep your dark theme as default with `#0A192F`, and if you add light mode later, base it on `#F5F8FA`.
+**Next step:** Apply these base backgrounds consistently so your components stay visually coherent across themes.

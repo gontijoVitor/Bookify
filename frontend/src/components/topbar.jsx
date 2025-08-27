@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
@@ -6,7 +7,7 @@ function Topbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 shadow-md">
+    <nav className="sec-bg-color shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo / Nome */}
@@ -16,17 +17,20 @@ function Topbar() {
 
           {/* Menu Desktop */}
           <div className="hidden md:flex space-x-6">
-            <a href="#" className="text-gray-300 hover:text-white">Dashboard</a>
-            <a href="#" className="text-gray-300 hover:text-white">Agendamentos</a>
-            <a href="#" className="text-gray-300 hover:text-white">Clientes</a>
+            <Link to="/"><p className="text-gray-300 hover:text-white">Dashboard</p></Link>
+            <Link to="Schedule"><p className="text-gray-300 hover:text-white">Schedule</p></Link>
+            <Link to="Customers"><p className="text-gray-300 hover:text-white">Customers</p></Link>
           </div>
 
           {/* Ícone de Usuário */}
           <div className="hidden md:flex items-center">
-            <button className="flex items-center gap-2 bg-gray-800 px-3 py-1 rounded-lg hover:bg-gray-700">
-              <FontAwesomeIcon icon={faUserCircle} className="text-gray-300 text-xl" />
-              <span className="text-sm text-gray-200">Perfil</span>
-            </button>
+            <Link to="/settings">
+              <button className="flex items-center gap-2 px-3 py-1 rounded-lg highlights-color">
+                <FontAwesomeIcon icon={faUserCircle} className="text-gray-300 text-xl" />
+                <span className="text-sm text-gray-200">Profile</span>
+              </button>
+            </Link>
+
           </div>
 
           {/* Botão Mobile */}
@@ -45,12 +49,15 @@ function Topbar() {
       {isOpen && (
         <div className="md:hidden bg-gray-800 px-4 pt-2 pb-3 space-y-2">
           <a href="#" className="block text-gray-300 hover:text-white">Dashboard</a>
-          <a href="#" className="block text-gray-300 hover:text-white">Agendamentos</a>
-          <a href="#" className="block text-gray-300 hover:text-white">Clientes</a>
-          <button className="w-full flex items-center gap-2 bg-gray-700 px-3 py-2 rounded-lg">
-            <FontAwesomeIcon icon={faUserCircle} className="text-gray-300 text-lg" />
-            <span className="text-sm text-gray-200">Perfil</span>
-          </button>
+          <a href="#" className="block text-gray-300 hover:text-white">Schedule</a>
+          <a href="#" className="block text-gray-300 hover:text-white">Customers</a>
+          <Link to="/settings">
+            <button className="w-full flex items-center gap-2 bg-gray-700 px-3 py-2 rounded-lg highlights-color">
+              <FontAwesomeIcon icon={faUserCircle} className="text-gray-300 text-lg" />
+              <span className="text-sm text-gray-200">Profile</span>
+            </button>
+          </Link>
+
         </div>
       )}
     </nav>
