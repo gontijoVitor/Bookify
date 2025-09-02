@@ -8,6 +8,7 @@ import UserSignin from './pages/user_signin.jsx';
 import Settings from './pages/settings.jsx'
 import UserRecovery from "./pages/user_recovery.jsx";
 import ResetPassword from "./pages/reset_password.jsx";
+import Customers from "./pages/customers.jsx";
 
 export default function App({ children }) {
   const layoutStyle = {
@@ -31,6 +32,8 @@ export default function App({ children }) {
         <Route path="/settings" element={<Settings />} />
         <Route path="/user_recovery" element={<UserRecovery />} />
         <Route path="/reset_password" element={<ResetPassword />} />
+        <Route path="/customers" element={<Customers />} />
+
       </Routes>
     </div>
   );
