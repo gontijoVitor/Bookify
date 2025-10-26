@@ -1,40 +1,42 @@
-# 💈 Sistema de Agendamento
+# 💈 Bookify
 
-Este é um sistema web completo para agendamento de serviços, ideal para barbearias, clínicas ou qualquer tipo de atendimento com horário marcado.
+This is a complete web-based appointment scheduling system — ideal for barbershops, clinics, or any business that manages scheduled appointments.
 
-O projeto é dividido em duas partes:
+The project is divided into two main parts:
 
-- **Frontend**: Desenvolvido em **React** com **Tailwind CSS** e **Vite**
-- **Backend**: Desenvolvido em **Node.js** com **Express** e banco de dados **MySQL**
-
----
-
-## 🚀 Funcionalidades
-
-- Formulário para agendamento com:
-  - Nome, telefone e e-mail
-  - Serviço e profissional
-  - Data, hora e observações
-- Registro dos dados diretamente no banco de dados
-- Arquitetura separada entre frontend e backend
+* **Frontend**: Built with **React**, **Tailwind CSS**, and **Vite**
+* **Backend**: Developed with **Node.js**, **Express**, and a **MySQL** database
 
 ---
 
-## 🧱 Tecnologias utilizadas
+## Features
+
+* Appointment form with:
+
+  * Name, phone number, and email
+  * Service and professional selection
+  * Date, time, and additional notes
+* Data stored directly in the database
+* Clear separation between frontend and backend architecture
+
+---
+
+## Technologies Used
 
 ### 🔹 Frontend
-- React
-- Tailwind CSS
-- Axios
-- Vite
+
+* React
+* Tailwind CSS
+* Axios
+* Vite
 
 ### 🔹 Backend
-- Node.js
-- Express
-- MySQL2
-- CORS
+
+* Node.js
+* Express
+* MySQL2
+* CORS
 
 ---
 
-## 📁 Estrutura de diretórios
-
+## Directory Structure
